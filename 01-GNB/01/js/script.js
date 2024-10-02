@@ -11,6 +11,7 @@ $(function () {
         $(this).find($submenu).stop().slideDown(duration);
         $(this).addClass("on");
     });
+    // 테스트 주석
 
     // 메뉴에 마우스가 나갔을 때
     $menu.on("mouseleave", function () {
