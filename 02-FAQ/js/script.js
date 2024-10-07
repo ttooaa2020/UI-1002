@@ -1,7 +1,7 @@
 $(function () {
     // 대상을 변수에 저장
     const $question = $(".faq-wrap ul > li ");
-    const $answer = $("answer-wrap");
+    const $answer = $(".answer-wrap");
     const duration = 300;
 
     // 질문을 클릭 했을 때
