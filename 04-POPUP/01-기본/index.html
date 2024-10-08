@@ -22,7 +22,8 @@
 
             .popup {
                 position: fixed;
-                top: -40%; /* 화면엣 나가게 */
+                top: 50%;
+                /* top: -40%; */
                 left: 50%;
                 width: 600px;
                 height: 400px;
@@ -31,12 +32,21 @@
                 transform: translate(-50%, -50%);
                 padding: 60px;
                 transition: 1s;
+                opacity: 0;
+
+                /* 마우스의 영항이 되지 않도록 만드는것 */
+                pointer-events: none;
+                user-select: none;
             }
 
             .popup.active {
-                top: 50%;
-                transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                /* 팝업창 효과 : cu 이걸로 활용하는게 좋다 */
+                /* top: 50%; */
+                opacity: 1;
+                transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 팝업창 효과 : cu 이걸로 활용하는게 좋다 */
+
+                /* 마우스의 영항이 되지 않도록 만드는것을 초기화 시키는 것 */
+                pointer-events: initial;
+                user-select: initial;
             }
 
             .dim {
