@@ -7,7 +7,7 @@ const swiper = new Swiper(".swiper", {
     effect: "slide", //slide, fade:오버레이 처럼 넘어가는것, cube, flip, coverflow
 
     // 캐러셀 만들기
-    slidesPerView: 1, // 보여질 슬라이드 갯수
+    slidesPerView: 1, // 보여질 슬라이드 갯수  "auto"를 넣어 준뒤 css에서 크기 값을 설정해주면 내 맘대로 크기 설정 가능
     spaceBetween: 20, // 간격 20px
     centeredSlides: true, // 첫번째 슬라이드를 가운데로
 
@@ -18,7 +18,7 @@ const swiper = new Swiper(".swiper", {
             spaceBetween: 30,
         },
         1200: {
-            slidesPerView: 5,
+            slidesPerView: "auto",
         },
     },
 
