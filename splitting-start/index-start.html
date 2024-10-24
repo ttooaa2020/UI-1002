@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>splitting.js</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font: 700 5vw "Noto Sans KR", sans-serif;
+                line-height: 1.5;
+            }
+
+            /* 4. 애니메이션 만들기 */
+            @keyframes textAni {
+                0% {
+                    transform: translateY(100px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            @-webkit-keyframes jello-horizontal {
+                0% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                30% {
+                    -webkit-transform: scale3d(1.25, 0.75, 1);
+                    transform: scale3d(1.25, 0.75, 1);
+                }
+                40% {
+                    -webkit-transform: scale3d(0.75, 1.25, 1);
+                    transform: scale3d(0.75, 1.25, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.15, 0.85, 1);
+                    transform: scale3d(1.15, 0.85, 1);
+                }
+                65% {
+                    -webkit-transform: scale3d(0.95, 1.05, 1);
+                    transform: scale3d(0.95, 1.05, 1);
+                }
+                75% {
+                    -webkit-transform: scale3d(1.05, 0.95, 1);
+                    transform: scale3d(1.05, 0.95, 1);
+                }
+                100% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+            @keyframes jello-horizontal {
+                0% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+                30% {
+                    -webkit-transform: scale3d(1.25, 0.75, 1);
+                    transform: scale3d(1.25, 0.75, 1);
+                }
+                40% {
+                    -webkit-transform: scale3d(0.75, 1.25, 1);
+                    transform: scale3d(0.75, 1.25, 1);
+                }
+                50% {
+                    -webkit-transform: scale3d(1.15, 0.85, 1);
+                    transform: scale3d(1.15, 0.85, 1);
+                }
+                65% {
+                    -webkit-transform: scale3d(0.95, 1.05, 1);
+                    transform: scale3d(0.95, 1.05, 1);
+                }
+                75% {
+                    -webkit-transform: scale3d(1.05, 0.95, 1);
+                    transform: scale3d(1.05, 0.95, 1);
+                }
+                100% {
+                    -webkit-transform: scale3d(1, 1, 1);
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+
+            h1 .char {
+                /* animation: textAni 1s both; */
+
+                -webkit-animation: jello-horizontal 1s both;
+                animation: jello-horizontal 1s both;
+                /* infinite : 무한으로 재생 */
+
+                animation-delay: calc(60ms * var(--char-index));
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- https://splitting.js.org/ -->
+        <h1 data-splitting>단순하게 살아라.</h1>
+
+        <script>
+            // 1.css, js 연결
+
+            // 2. 요소의 속성 적용
+            //  : data-splitting (<h1 data-splitting>)
+
+            // 3. 초기화: 요소검사기로 글자 하나하나 쪼개졌는지 확인
+            Splitting();
+
+            // 4. 애니메이션 만들기
+
+            // 5. 애니메이션 적용
+        </script>
+    </body>
+</html>
